@@ -1,5 +1,12 @@
 *****ALGORITHMS AID********
-I will be going over multiple heaps in this project
+For this project I will try to use as few built in methods as possible so that people
+can better understand the logic behind the code.
 
-I will be creating my own helper functions so that beginners can see
-the logic behind it. I will also give tips on already built in functionality
+I will be creating Models for multiple Heaps such as: MinHeap, MaxHeap, B-Tree, Fibonacci heap,
+Reb-Black Tree, Splay Tree, and Binomial Heap.
+
+I will be creating Views for all the Heaps that will abstract from a Generic View used by all the models.
+
+I will be creating a Controller so that the user can play around with the models in the view.
+
+My goal is to get this aid in as many platforms as possible. This is part 1
