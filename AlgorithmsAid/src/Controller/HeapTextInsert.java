@@ -1,7 +1,13 @@
-package Model;
+package Controller;
+
+import Model.ITree;
 
 import java.util.Scanner;
 
+/**
+ * Class so that user can insert nodes to the model in a text file through
+ * Command line
+ */
 public class HeapTextInsert {
     ITree heap;
 
@@ -18,6 +24,7 @@ public class HeapTextInsert {
             heap.insert(Integer.parseInt(i));
         }
 
+        throw new IllegalArgumentException("Not yet finished");
     }
 
 }

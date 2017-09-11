@@ -14,9 +14,7 @@ import java.util.List;
 
 
 /**
- * Array Logic:
- * Lets make the top level be -1 and make it a constraint
- * that the user cant put in any negative numbers? FOR NOW
+ * Array Logic: (the nodes will be stored in an array)
  * Parent(i) = i/2
  * LEFT(i) = 2i
  * RIGHT(i) = 2i+1
@@ -31,7 +29,7 @@ public class MinMaxHeapImpl implements ITree{
     //Tip: Always set your variables to private!! You don't want to give any other part of your code access to it.
 
     private int SIZELIMIT = 200;//Don't really have a use for the size limit at the moment, but it's nice to have it
-    //there in case there if ever need for it.
+    //there in case I want to make a size limit. Maybe I'll make only a size limit for the View.
     private int[] nodes;//MINHEAP/MAXHEAP will be represented in an array
     private int currentIndex = 1; //currentIndex will be used to keep track of where a node should be inserted.
     private boolean minOrMax;
@@ -71,10 +69,14 @@ public class MinMaxHeapImpl implements ITree{
      */
     @Override
     public void delete(int node) {
-
+        throw new IllegalArgumentException("Functionality coming soon");
     }
 
     @Override
+    /**
+     * Overrides the toString Method. Uses the currentNodesConsole method. Parent Mode
+     * is set to true.
+     */
     public String toString() {
         return currentNodesConsole(true);
     }
@@ -107,8 +109,7 @@ public class MinMaxHeapImpl implements ITree{
      * @return
      */
     private int find(int number, int place) {
-
-        return 0;
+        throw new IllegalArgumentException("Functionality coming soon");
     }
 
 
@@ -172,7 +173,7 @@ public class MinMaxHeapImpl implements ITree{
      */
     @Override
     public void undo() {
-
+    throw new IllegalArgumentException("Functionality coming soon");
     }
 
     /**

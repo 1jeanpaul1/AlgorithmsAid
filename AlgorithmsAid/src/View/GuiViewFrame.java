@@ -4,12 +4,19 @@ import javax.swing.*;
 import javax.swing.text.html.ImageView;
 import java.awt.*;
 
+/**
+ * Sets the layout of the Viewable frame.
+ */
 public class GuiViewFrame extends JFrame {
     private NodeGuiViewPanel nodeView;
     private final JPanel gui;
     private JScrollPane scrollPane;
 
-
+    /**
+     * Initializes the Frame.
+     * @param loNodes list of nodes passed in through controller.
+     * @param heapType The name of the heap that is being passed in through controller.
+     */
     public GuiViewFrame(int[] loNodes, String heapType) {
         this.nodeView = new NodeGuiViewPanel(loNodes, heapType);
         this.gui = this.nodeView;
@@ -33,7 +40,6 @@ public class GuiViewFrame extends JFrame {
     }
 
     public void render() {
-        //problem is here. Doesn't seem to pain.
         initialize();
        // gui.repaint();
     }

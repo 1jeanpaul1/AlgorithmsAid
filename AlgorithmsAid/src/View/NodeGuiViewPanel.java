@@ -1,21 +1,19 @@
 package View;
 
 import javafx.scene.shape.Circle;
-import sun.plugin2.util.ColorUtil;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.util.ArrayList;
+import java.awt.Color;
 import java.util.List;
-import java.util.Random;
 
-public class NodeGuiViewPanel extends JPanel {
+public class NodeGuiViewPanel extends JPanel implements IView {
     private List<Circle> CircleNodes = new ArrayList<>();
     private int[] loNodes;
-    private String heapType;
-    //get something for adding to the current image.
+    private String heapType; //Should probably change heapType from a String to an Enum
 
-    //QUICK NOTE: DON'T HAVE TO DO MORE THAN THE FIRST. MAKES IT MORE DYNAMIC TO GET FOR ANY SIZE.
     //Size in pixels of the node
     private static final int FIRST_NODE_SIZE = 30;
 
@@ -31,33 +29,20 @@ public class NodeGuiViewPanel extends JPanel {
     NodeGuiViewPanel(int[] loNodes, String heapType) {
         super();
         this.loNodes = loNodes;
-        this.heapType = heapType;
+        this.heapType = heapType; //Should probably change heapType from a String to an Enum
     }
 
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         drawNodes(g);
     }
 
     /**
-     * Draws all the Nodes together. Can figure out the logic later.
-     * I don't think much more needs to go in.
-     * Need an addition button
-     * Need a delete button
-     * Need a reset button
-     * All of which will be controlled from the controller. Once I have this done I can upload to github
-     * @param g
+     * Draws all the Nodes together.
+     * @param g Graphics.
      */
-    //1 1 % 1 (1 * 1)
-    //2 1 % 2 (1 * 2)
-    //4 1 % 4 (2 * 2)
-    //8 1 % 8 (4 * 2)
-    //16 1 % 16 (8 * 2)
-    //keeps going up by 2
-
     private void drawNodes(Graphics g) {
-        //System.out.println("Gets to drawNodes");
-        Random random = new Random();
         g.setColor(Color.lightGray);
         int currentRow = 1; //the current row that nodes are being added to, changes after a row is filled
         int currentRowSize = 1; //the count of how many nodes are in a row
@@ -113,9 +98,6 @@ public class NodeGuiViewPanel extends JPanel {
             }
 
         }
-
-        System.out.println("***********");
-
     }
 
     @Override
@@ -126,9 +108,5 @@ public class NodeGuiViewPanel extends JPanel {
     public Dimension getPreferredSize() {
         return new Dimension(2000,580);
     }
-
-
-
-
 
 }
